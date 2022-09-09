@@ -69,7 +69,6 @@ class LivroController {
 
     static listarLivroPorEditora = (req, res) => {
         const editora = req.params.editora;
-        console.log(editora);
         livros.find({ editora: editora }, {}, (err, livros) => {
             res.status(200).send(livros);
         });

@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const urlConnection =
-    // "mongodb+srv://guilhermeamorim:rJTUXt7iKn5rr!6@cluster0.5zfqrm3.mongodb.net/alura-node";
     "mongodb+srv://" +
     process.env.DB_HOST +
     ":" +

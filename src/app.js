@@ -17,14 +17,6 @@ app.get("/livros/:id", (req, res) => {
     res.status(201).json(livros[livroId]);
 });
 
-app.put("/livros/:id", (req, res) => {
-    const { id } = req.params;
-    const index = getLivro(id);
-
-    livros[index].titulo = req.body.titulo;
-    res.status(201).json(livros);
-});
-
 app.delete("/livros/:id", (req, res) => {
     const { id } = req.params;
     const index = getLivro(id);

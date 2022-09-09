@@ -1,8 +1,17 @@
 import mongoose from "mongoose";
+import * as dotenv from "dotenv";
 
-mongoose.connect(
-    "mongodb+srv://guilhermeamorim:rJTUXt7iKn5rr!6@cluster0.5zfqrm3.mongodb.net/alura-node"
-);
+const urlConnection =
+    "mongodb+srv://" +
+    dotenv.config().parsed.DB_HOST +
+    ":" +
+    dotenv.config().parsed.SECRET_KEY +
+    "@" +
+    dotenv.config().parsed.DB_CLUSTER +
+    "/" +
+    dotenv.config().parsed.DB_DATA;
+
+mongoose.connect(urlConnection);
 
 const db = mongoose.connection;
 

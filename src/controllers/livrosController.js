@@ -5,6 +5,7 @@ class LivroController {
         livros
             .find()
             .populate("autor")
+            .populate("editora")
             .exec((err, livros) => {
                 res.status(200).json(livros);
             });
@@ -39,6 +40,7 @@ class LivroController {
         livros
             .findById(id)
             .populate("autor", "nome")
+            .populate("editora", "nome")
             .exec((err, livros) => {
                 if (err) {
                     res.status(400).send({

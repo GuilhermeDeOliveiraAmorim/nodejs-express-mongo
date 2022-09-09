@@ -9,7 +9,11 @@ const livroSchema = new mongoose.Schema(
             ref: "autores",
             required: true,
         },
-        editora: { type: String, required: true },
+        editora: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "editoras",
+            required: true,
+        },
         numeroDePaginas: { type: Number },
     },
     {

@@ -1,15 +1,14 @@
 import mongoose from "mongoose";
-import * as dotenv from "dotenv";
 
 const urlConnection =
     "mongodb+srv://" +
-    dotenv.config().parsed.DB_HOST +
+    process.env.DB_HOST +
     ":" +
-    dotenv.config().parsed.SECRET_KEY +
+    process.env.SECRET_KEY +
     "@" +
-    dotenv.config().parsed.DB_CLUSTER +
+    process.env.DB_CLUSTER +
     "/" +
-    dotenv.config().parsed.DB_DATA;
+    process.env.DB_DATA;
 
 mongoose.connect(urlConnection);
 

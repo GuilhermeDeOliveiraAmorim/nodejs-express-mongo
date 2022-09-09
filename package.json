@@ -1,0 +1,23 @@
+{
+	"name": "alura-express",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "nodemon server.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/nodemon": "^1.19.2",
+		"nodemon": "^2.0.19"
+	},
+	"dependencies": {
+		"@types/mongoose": "^5.11.97",
+		"express": "^4.18.1",
+		"mongoose": "^6.6.0"
+	}
+}

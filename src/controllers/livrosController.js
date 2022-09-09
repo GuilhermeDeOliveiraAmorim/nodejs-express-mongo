@@ -43,6 +43,21 @@ class LivroController {
             }
         });
     };
+
+    static excluirLivro = (req, res) => {
+        const id = req.params.id;
+        livros.findByIdAndDelete(id, (err) => {
+            if (!err) {
+                res.status(200).send({
+                    message: `Removido`,
+                });
+            } else {
+                res.status(500).send({
+                    message: `${err.message} - Não encontrado`,
+                });
+            }
+        });
+    };
 }
 
 export default LivroController;

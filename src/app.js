@@ -1,6 +1,5 @@
 import express from "express";
 import db from "../config/dbConnect.js";
-import livros from "./models/Livro.js";
 import routes from "./routes/index.js";
 
 db.on("error", console.log.bind(console, "Erro na conexão"));
@@ -11,18 +10,6 @@ db.once("open", () => {
 const app = express();
 
 app.use(express.json());
-
-app.delete("/livros/:id", (req, res) => {
-    const { id } = req.params;
-    const index = getLivro(id);
-
-    livros.splice(index, 1);
-    res.status(201).send(`Excluído`);
-});
-
-function getLivro(id) {
-    return livros.findIndex((livro) => livro.id == id);
-}
 
 routes(app);
 

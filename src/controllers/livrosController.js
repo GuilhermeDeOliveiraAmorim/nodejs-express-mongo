@@ -30,6 +30,19 @@ class LivroController {
             }
         });
     };
+
+    static listarLivroPorId = (req, res) => {
+        const id = req.params.id;
+        livros.findById(id, (err, livros) => {
+            if (err) {
+                res.status(400).send({
+                    message: `${err.message} - Não encontrado`,
+                });
+            } else {
+                res.status(200).send(livros);
+            }
+        });
+    };
 }
 
 export default LivroController;

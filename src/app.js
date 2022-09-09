@@ -12,11 +12,6 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/livros/:id", (req, res) => {
-    const livroId = getLivro(req.params.id);
-    res.status(201).json(livros[livroId]);
-});
-
 app.delete("/livros/:id", (req, res) => {
     const { id } = req.params;
     const index = getLivro(id);

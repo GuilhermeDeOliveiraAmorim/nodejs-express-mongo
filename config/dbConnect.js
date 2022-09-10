@@ -1,14 +1,19 @@
 import mongoose from "mongoose";
 
+const DB_HOST = "guilhermeamorim";
+const SECRET_KEY = "rJTUXt7iKn5rr!6";
+const DB_CLUSTER = "cluster0.5zfqrm3.mongodb.net";
+const DB_DATA = "alura-node";
+
 const urlConnection =
     "mongodb+srv://" +
-    process.env.DB_HOST +
+    DB_HOST +
     ":" +
-    process.env.SECRET_KEY +
+    SECRET_KEY +
     "@" +
-    process.env.DB_CLUSTER +
+    DB_CLUSTER +
     "/" +
-    process.env.DB_DATA;
+    DB_DATA;
 
 mongoose.connect(urlConnection);
 

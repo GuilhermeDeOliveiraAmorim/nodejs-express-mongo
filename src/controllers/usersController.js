@@ -21,7 +21,7 @@ class usersController {
     };
 
     static addUser = (req, res) => {
-        const user = new autores(req.body);
+        const user = new users(req.body);
         user.save((err) => {
             if (err) {
                 res.status(500).send({
